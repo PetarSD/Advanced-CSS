@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Animacija</title>
+    <style>
+        #box{
+            background-color: #050210;
+            height:700px;
+            width:700px;
+        }
+
+        #krug{
+            height: 450px;
+            width: 450px;
+            background: linear-gradient( #fb5dad, #55fb9f, #b97aff);
+            border-radius: 50%;
+            display: inline-block;
+            margin:100px;
+            position:absolute;
+            animation-name: my-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            box-shadow:     0 0 80px #fb5dad,
+                            -20px 0 100px #55fb9f,
+                            20px 0 80px #b97aff;
+
+        }
+
+        #crnikrug{
+            height: 380px;
+            width: 380px;
+            background: #050210;
+            border-radius: 50%;
+            display:inline-block;
+            margin:135px;
+            position:absolute;
+        }
+
+        #inside{
+            height: 380px;
+            width: 380px;
+            background: #050210;
+            border-radius: 50%;
+            display:inline-block;
+            margin:135px;
+            animation-name: pulsiranje;
+            animation-duration: 3s;
+            animation-iteration-count:infinite;
+            animation-direction: reverse;
+            position:relative;
+        }
+
+        @keyframes my-animation {
+            from {
+                transform: rotate(-360deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+    }
+
+        @keyframes pulsiranje {
+        0% {
+            transform: scale(1);
+            box-shadow: inset 0 0 0 0 rgba(72, 15, 206, 0.7);
+            opacity:0;
+        }
+ 
+        50% {
+            transform: scale(1);
+            box-shadow: inset 0 0 0 400px rgba(255, 255, 255, 0);
+            opacity:0.8;
+        }
+
+        100% {
+            transform: scale(1);
+            box-shadow: inset 0 0 0 0 #060213;
+            opacity:1;
+        }
+}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="krug">
+        </div>
+        <div id="crnikrug">
+
+        </div>
+        <div id="inside">
+
+        </div>
+    </div>
+</body>
+</html>
